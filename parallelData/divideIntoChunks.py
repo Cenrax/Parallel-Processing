@@ -1,5 +1,12 @@
 import math
 
+def count_skills(job_postings, skills):
+    frequency = {}
+    for skill_name in skills["Name"]:
+        frequency[skill_name] = job_postings["Job Description"].str.count(skill_name).sum()
+        
+    return frequency
+
 def make_chunks(df, num_chunks):
     num_rows = df.shape[0]
     chunk_size = math.ceil(num_rows/num_chunks)
