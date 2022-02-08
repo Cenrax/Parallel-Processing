@@ -35,5 +35,5 @@ print(merged)
 """
 
 merged_results = {}
-for result in results():
+for result in results:
     merged_results.update(result)
