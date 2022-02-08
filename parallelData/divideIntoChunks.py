@@ -25,10 +25,15 @@ with concurrent.futures.ProcessPoolExecutor() as executor:
 results = [future.result() for future in futures]
 
 print(results[0])
-
+"""
 d1 = {'a': 1, 'b': 2} #usage of dict.update() The way the dict.update() method works is that for each key in the dictionary provided as an argument, it will update the corresponding value in the other dictionary. If the key didn't exist, it creates a new entry.
 d2 = {'c': 3, 'd': 4}
 merged = {}
 merged.update(d1)
 merged.update(d2)
 print(merged)
+"""
+
+merged_results = {}
+for result in results():
+    merged_results.update(result)
