@@ -17,4 +17,7 @@ results = pool.map(max,chunks)
 pool.close()
 pool.join()
 
+with Pool(6) as pool:
+    results = pool.map(max,chunks)
+
 # Note that after calling the `Pool.map()` method, we call the `Pool.close()` and `Pool.join()` methods. The [`Pool.close()` method](https://docs.python.org/3.8/library/multiprocessing.html?highlight=pool join#multiprocessing.pool.Pool.close) prevents the addition of new processes to the pool. We need to execute this before we can join the processes. As before, the [`Pool.join()` method](https://docs.python.org/3.8/library/multiprocessing.html?highlight=pool join#multiprocessing.pool.Pool.join) makes the main program wait for all processes to finish before continuing executing. 
