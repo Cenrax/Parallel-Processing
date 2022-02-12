@@ -21,3 +21,15 @@ with Pool(num_processes) as pool:
     chunk_results = pool.map(max, chunks)
 
 overall_result = functools.reduce(max,chunk_results)
+
+'''
+# Genaralized map reduce function where:
+        data: Dataset
+        num_processess: no of processes we want to run the process in parallel
+        mapper: means the function we want to apply
+def map_reduce(data, num_processes, mapper, reducer):
+    chunks = make_chunks(data, num_processes)
+    with Pool(num_processes) as pool:
+        chunk_results = pool.map(mapper, chunks)
+    return functools.reduce(reducer, chunk_results)
+'''
